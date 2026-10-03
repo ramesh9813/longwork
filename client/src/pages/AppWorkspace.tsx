@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
 import './AppWorkspace.css';
 
 export default function AppWorkspace() {
-  const { user, loading, login, logout } = useAuth();
-
   return (
     <div className="workspace">
       <header className="workspace-topbar">
@@ -12,15 +9,6 @@ export default function AppWorkspace() {
           longwork
         </Link>
         <span className="workspace-route">/app</span>
-        {loading ? null : user ? (
-          <button onClick={logout} className="workspace-auth-btn">
-            Sign out ({user.displayName || user.email})
-          </button>
-        ) : (
-          <button onClick={login} className="workspace-auth-btn">
-            Sign in with Google
-          </button>
-        )}
       </header>
 
       <div className="workspace-panes">
