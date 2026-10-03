@@ -1,0 +1,26 @@
+{
+  "name": "longwork",
+  "version": "1.0.0",
+  "description": "performing ertremly long task ",
+  "license": "MIT",
+  "author": "ramesh kumar mahato",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "build:server": "npm --prefix server run build",
+    "build:client": "npm --prefix client run build",
+    "start": "npm --prefix server run start",
+    "typecheck": "npm --prefix server run typecheck && npm --prefix client run typecheck",
+    "install:all": "npm --prefix server install --ignore-scripts && npm --prefix client install --ignore-scripts && npm install --ignore-scripts"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
