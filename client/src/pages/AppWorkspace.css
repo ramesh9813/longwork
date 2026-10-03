@@ -1,0 +1,91 @@
+.workspace {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.workspace-brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.workspace-route {
+  color: #666;
+}
+
+.workspace-auth-btn {
+  margin-left: auto;
+}
+
+.workspace-panes {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.pane {
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.pane-gallery {
+  width: 25%;
+  border-right: 1px solid #ccc;
+}
+
+.pane-plan {
+  width: 60%;
+}
+
+.pane-customize {
+  width: 15%;
+  border-left: 1px solid #ccc;
+}
+
+.pane-hint {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.pane-list {
+  padding-left: 1.25rem;
+}
+
+.plan-canvas {
+  border: 1px dashed #999;
+  border-radius: 8px;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.pane-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .workspace-panes {
+    flex-direction: column;
+  }
+  .pane-gallery,
+  .pane-plan,
+  .pane-customize {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+}

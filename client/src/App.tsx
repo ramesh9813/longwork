@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 import './App.css';
 
@@ -40,7 +41,9 @@ function App() {
   return (
     <div className="app">
       <h1>longwork</h1>
-      <p>React + TypeScript frontend + Express + Firebase backend</p>
+      <p>
+        React + TypeScript frontend + Express + Firebase backend — <Link to="/app">Open /app</Link>
+      </p>
 
       <div className="card">
         <h2>Sign in</h2>
