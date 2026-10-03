@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import healthRouter from './routes/health';
+import { requireAuth, type AuthedRequest } from './middleware/requireAuth';
 import { initFirebase } from './config/firebase';
 
 dotenv.config();
@@ -30,6 +31,11 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 app.use('/api/health', healthRouter);
+
+// Verified Firebase user profile (requires Google sign-in on the client)
+app.get('/api/me', requireAuth, (req: AuthedRequest, res: Response) => {
+  res.json({ user: req.firebaseUser });
+});
 
 // Render health check (GET /health -> same as /api/health)
 app.get('/health', (_req: Request, res: Response) => {
